@@ -1,0 +1,31 @@
+﻿@using Cheezious.Models
+@model Order
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+<div class="View">
+    <div class="container p-5">
+        <h2 class="fw-bold mb-3">Orders</h2>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">CreatedOn</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.CreatedOn</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">BuyerName</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Buyer.Name</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Title</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Product.Title</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Price</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Product.Price</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Description</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Product.Description</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Product Image</p>
+        <p><img src="~/imgs/product-images/@Model.Product.Image" style="width:200px;border-radius:10px" /> </p>
+
+    </div>
+</div>
+
+

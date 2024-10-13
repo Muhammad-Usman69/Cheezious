@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+html,
+body {
+    scroll-behavior: smooth;
+
+
+}
+
+:root {
+    --main-color: #FEDC00;
+    --font-weight: 600;
+}
+
+
+
+
+/* -----login----- */
+
+#login {
+   
+    display: flex;
+    justify-content: center;
+    margin: 70px 0;
+    align-items: center;
+}
+
+#login form h4 {
+    color: #F25925;
+    margin: 20px 0;
+}
+
+#login form {
+    height: auto;
+    padding: 15px 20px;
+    width: 400px;
+    background-color: white;
+    box-shadow: 0 0 10px #8d8484;
+    border-radius: 10px;
+
+  
+}
+
+#login form .input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+
+}
+
+form input,
+form select{
+    padding: 8px;
+    margin-bottom: 10px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px !important;
+}
+form select{
+    padding:8px 5px;
+}
+form .check {
+    display: flex;
+    justify-content: space-between;
+}
+
+form .check a {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+
+form .btn {
+    display: flex;
+    justify-content: center;
+}
+
+form button{
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: inherit;
+    border-radius: 10px;
+    margin: 0;
+    letter-spacing: 1px;
+    background-color: #FEDC00;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    margin: 5px 0;
+}
+
+form button:hover {
+    background-color: #8d8484;
+    color: white;
+}
+
+form .selectimg img{
+    width:100%;
+    height:25vh;
+    cursor:pointer;
+}
+footer {
+    margin-top: 0px;
+}
+

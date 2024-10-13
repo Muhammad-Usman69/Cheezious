@@ -1,0 +1,52 @@
+﻿@using Cheezious.Models
+@model List<AssignOrder>
+
+
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="roles">
+    <div class="roles-data">
+        <a asp-action="AddUpdateAssignOrders" asp-controller="Admin" class="addbtn">Add</a>
+        <div class="overflow-scroll">
+            <table class="table mt-4 table-hover">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>BuyerName</td>
+                        <td>DeliverdOn</td>
+                        <td>ProductTitle</td>
+                        <td>AssignedOrder</td>
+                        <td>Action</td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (AssignOrder assignOrders in Model)
+                    {
+                        <tr>
+                            <td>@assignOrders.Id</td>
+                            <td>@assignOrders.Order.Buyer.Name</td>
+                            <td>@assignOrders.DeliverdOn</td>
+                            <td>@assignOrders.Order.Product.Title</td>
+                            <td>@assignOrders.Rider.Name</td>
+
+
+                            <td>
+                                <a asp-action="ViewAssignOrders" asp-controller="Admin" asp-route-id="@assignOrders.Id" class="btn btn-info"><i class="fa-solid fa-eye"></i></a>
+                                <a asp-action="AddUpdateAssignOrders" asp-controller="Admin" asp-route-id="@assignOrders.Id" class="btn" style="background-color: #F25925;"><i class='bx bxs-pencil'></i></a>
+                                <a asp-action="DeleteAssignOrders" asp-controller="Admin" asp-route-id="@assignOrders.Id" class="btn btn-danger"><i class='bx bxs-trash'></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

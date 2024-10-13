@@ -1,0 +1,55 @@
+﻿@using Cheezious.Models
+@model List<User>
+
+
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="roles">
+    <div class="roles-data">
+        <a asp-action="AddUpdateUsers" asp-controller="Admin" class="addbtn">Add</a>
+        <div class="overflow-scroll">
+            <table class="table mt-4 table-hover">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Name</td>
+                        <td>Email</td>
+                       
+                        <td>PhoneNumber</td>
+                        <td>Address</td>
+                        
+                        <td>Action</td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (User users in Model)
+                    {
+                        <tr>
+                            <td>@users.Id</td>
+                            <td>@users.Name</td>
+                            <td>@users.Email</td>
+                           
+                            <td>@users.PhoneNumber</td>
+                            <td>@users.Address</td>
+                           
+
+                            <td>
+                                <a asp-action="ViewUsers" asp-controller="Admin"  asp-route-id="@users.Id" class="btn btn-info"><i class="fa-solid fa-eye"></i></a>
+                                <a asp-action="AddUpdateUsers" asp-controller="Admin" asp-route-id="@users.Id" class="btn" style="background-color: #F25925;"><i class='bx bxs-pencil'></i></a>
+                                <a asp-action="DeleteUsers" asp-controller="Admin" asp-route-id="@users.Id" class="btn btn-danger"><i class='bx bxs-trash'></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,43 @@
+﻿@using Cheezious.Models
+@model AssignOrder
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+<div class="View">
+    <div class="container p-5">
+        <h2 class="fw-bold mb-3">Assign Orders</h2>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">DeliverdOn</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.DeliverdOn</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">BuyerName</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Order.Buyer.Name</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">BuyerAddress</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Order.Buyer.Address</p>
+        <h2 class="fw-bold mb-3">Product Details</h2>
+
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Title</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Order.Product.Title</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Price</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Order.Product.Price</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Description</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Order.Product.Description</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Product Image</p>
+        <p><img src="~/imgs/product-images/@Model.Order.Product.Image" style="width:200px;border-radius:10px" /> </p>
+        <h2 class="fw-bold mb-3">Rider Details</h2>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">RiderName</p>
+
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Rider.Name</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">RiderPhoneNumber</p>
+
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Rider.PhoneNumber</p>
+
+
+    </div>
+</div>
+
+

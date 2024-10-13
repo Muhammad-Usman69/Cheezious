@@ -1,0 +1,73 @@
+﻿@using Cheezious.Models.ViewModels
+@model AssignOrder
+
+
+<style>
+
+    main {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    .productdetails {
+        flex: 1;
+        margin-top: 10rem;
+    }
+
+    img {
+      
+        border-radius: 10px;
+    }
+    .details .box{
+        width:100%;
+        word-break:break-all;
+    }
+   .details .box h3{
+       margin-bottom:15px;
+
+   }
+</style>
+
+<div class="container productdetails">
+    <div class="row align-items-center">
+        <div class="col-md-5 mb-4">
+            <p><img src="~/imgs/product-images/@Model.Order.Product.Image" style="width:250px;border-radius:10px" /> </p>
+        </div>
+        <div class="col-md-7 details">
+           <div class="box ">
+                <h3><i class='bx bx-cart me-2'></i>@Model.Order.Product.Title</h3>
+                  <hr />
+                <h3><i class='bx bx-dollar me-2'></i>@Model.Order.Product.Price</h3>
+                <hr />
+                <h3><i class='bx bx-book me-2'></i>@Model.Order.Product.Description</h3>
+                <hr />
+                
+                <h3><i class='bx bx-pin me-2'></i>@Model.Order.Buyer.Address</h3>
+
+           </div>
+    </div>
+</div>
+</div>
+<footer>
+    <div class="box text-center">
+
+        <p>
+            <img src="/imgs/footerlogo.19a797d2.svg" alt="">
+            Cheezious Copyright © 2024. All Rights Reserved.
+        </p>
+        <p>
+            <a href="">
+                TERMS & CONDITIONS
+            </a> |
+            <a href="">
+                Privacy policy
+            </a>
+        </p>
+    </div>
+</footer>
+
+
+
+
+

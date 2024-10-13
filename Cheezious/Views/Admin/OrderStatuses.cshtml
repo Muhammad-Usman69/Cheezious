@@ -1,0 +1,43 @@
+﻿@using Cheezious.Models
+@model List<OrderStatus>
+
+
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+    <div class="roles">
+        <div class="roles-data">
+            <a asp-action="AddUpdateOrderStatuses" asp-controller="Admin" class="addbtn">Add</a>
+            <div class="overflow-scroll">
+                <table class="table mt-4 table-hover">
+                    <thead>
+                        <tr>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Action</td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (OrderStatus orderStatuses in Model)
+                        {
+                            <tr>
+                                <td>@orderStatuses.Id</td>
+                                <td>@orderStatuses.Name</td>
+
+                                <td>
+                                    <a asp-action="ViewOrderStatuses" asp-controller="Admin" asp-route-id="@orderStatuses.Id" class="btn btn-info"><i class="fa-solid fa-eye"></i></a>
+                                    <a asp-action="AddUpdateOrderStatuses" asp-controller="Admin" asp-route-id="@orderStatuses.Id" class="btn" style="background-color: #F25925;"><i class='bx bxs-pencil'></i></a>
+                                    <a asp-action="DeleteOrderStatuses" asp-controller="Admin" asp-route-id="@orderStatuses.Id" class="btn btn-danger"><i class='bx bxs-trash'></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    

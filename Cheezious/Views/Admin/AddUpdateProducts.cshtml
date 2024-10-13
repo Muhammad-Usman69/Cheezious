@@ -1,0 +1,60 @@
+﻿@using Cheezious.Models
+@model Product
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/css/Roles.css" rel="stylesheet" />
+
+<section id="login" class="container">
+    <form asp-action="AddUpdateProducts" asp-controller="Admin" method="post" enctype="multipart/form-data">
+        <h4 class="text-center text-uppercase">Add Products</h4>
+        <input type="hidden" name="name" asp-for="Id" />
+        <div class="input-group">
+            <label for="Title">Title</label>
+            <input type="text" id="Title" placeholder="Enter Title" asp-for="Title">
+        </div>
+        <div class="input-group">
+            <label for="Price">Price</label>
+            <input type="text" id="Price" placeholder="Enter Price" asp-for="Price">
+        </div>
+        <div class="input-group">
+            <label for="Description">Description</label>
+            <input type="text" id="Description" placeholder="Enter Description" asp-for="Description">
+        </div>
+
+        <div class="input-group">
+            <label>Categories</label>
+            <select asp-for="CategoryId" asp-items="ViewBag.Categories">
+                <option>Select Categories</option>
+
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>ProductStatuses</label>
+            <select asp-for="ProductStatusId" asp-items="ViewBag.ProductStatuses">
+                <option>Select ProductStatuses</option>
+
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label class="text-center fw-bold">Upload Image</label>
+            <label for="img" class="selectimg">
+                <img class="imagePreview" src="/imgs/selectimgs.png" alt="Image Preview">
+            </label>
+            <input type="file" name="file" class="imageUpload" accept="image/*" id="img">
+        </div>
+       
+
+        <div class="d-flex justify-content-center">
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</section>
+
+
+<script src="~/js/project-proposal.js"></script>
+

@@ -1,0 +1,132 @@
+﻿<div class="roles">
+    <div class="roles-data">
+        <a asp-action="AddUpdateOrders" asp-controller="Admin" class="addbtn">Add</a>
+        <div class="overflow-scroll">
+
+            <h1>User Profile: @Model.User.Name</h1>
+
+
+            @if (Model.Orders.Any())
+            {
+
+
+
+                <table class="table mt-4 table-hover">
+                    <thead>
+                        <tr>
+                            <td>Id</td>
+                            <td>BuyerName</td>
+                            <td>CreatedOn</td>
+                            <td>Product</td>
+                            <td>Action</td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        @foreach (var order in Model.Orders)
+                        {
+
+                            <tr>
+                                <td>@order.Id</td>
+                                <td>@order.BuyerId</td>
+                                <td>@order.CreatedOn</td>
+                                <td>@order.ProductId</td>
+
+                            </tr>
+                        }
+
+
+
+
+                    </tbody>
+                </table>
+
+            }
+
+            @if (Model.AssignOrders.Any())
+            {
+
+                <table class="table mt-4 table-hover">
+                    <thead>
+                        <tr>
+                            <td>Id</td>
+                            <td>BuyerName</td>
+                            <td>CreatedOn</td>
+                            <td>Product</td>
+                            <td>Action</td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        @foreach (var assignOrder in Model.AssignOrders)
+                        {
+
+                            <tr>
+                                <td>@assignOrder.Id</td>
+                                <td>@assignOrder.Order.BuyerId</td>
+                                <td>@assignOrder.Rider.Name</td>
+
+                            </tr>
+                        }
+
+
+
+
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<section id="login" class="container">
+
+    <h1>User Profile: @Model.User.Name</h1>
+    <p>Email: @Model.User.Email</p>
+
+
+    <form asp-action="AddUpdateUsers" asp-controller="Admin" method="post" enctype="multipart/form-data">
+        <h4 class="text-center text-uppercase">Edit Users</h4>
+        <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter Name" value="@Model.User.Name">
+        </div>
+
+        <div class="input-group">
+            <label for="Password">Password</label>
+            <input type="text" id="Password" placeholder="Enter Password" value="@Model.User.Password">
+        </div>
+        <div class="input-group">
+            <label for="PhoneNumber">PhoneNumber</label>
+            <input type="text" id="PhoneNumber" placeholder="Enter PhoneNumber" value="@Model.User.PhoneNumber">
+        </div>
+        <div class="input-group">
+            <label for="Address">Address</label>
+            <input type="text" id="Address" placeholder="Enter Address">
+        </div>
+
+
+        <div class="input-group">
+            <label class="text-center fw-bold">Upload Image</label>
+            <label for="img" class="selectimg">
+                <img class="imagePreview" src="/imgs/selectimgs.png" alt="Image Preview">
+            </label>
+            <input type="file" name="file" class="imageUpload d-none" accept="image/*" id="img">
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</section>

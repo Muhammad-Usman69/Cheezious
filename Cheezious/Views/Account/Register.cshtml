@@ -1,0 +1,76 @@
+﻿@using Cheezious.Models
+@model User
+@{
+    
+    Layout = "~/Views/Shared/_FormsLayout.cshtml";
+
+}
+<link href="~/css/media-quaries.css" rel="stylesheet"/>
+<link href="~/css/Register.css" rel="stylesheet" />
+
+<section id="login" class="container">  
+    <form asp-action="Register" asp-controller="Account" method="post" enctype="multipart/form-data">
+
+        <h4 class="text-center text-uppercase">Register</h4>
+        <div class="input-group text-center">
+
+            <label for="img" class="selectimg">
+                <img class="imagePreview edit-img" src="~/imgs/user-img2.png" alt="Image Preview">
+            </label>
+            <input type="file" name="file" class="imageUpload d-none text-center" accept="image/*" id="img">
+        </div>
+        <div class="input-group">
+            <label for="Name">Name</label>
+            <input type="text" id="Name" placeholder="Enter Name" asp-for="Name">
+        </div>
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter Email" asp-for="Email">
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter Password" asp-for="Password">
+        </div>
+        <div class="input-group">
+            <label for="PhoneNumber">PhoneNumber</label>
+            <input type="text" id="PhoneNumber" placeholder="Enter PhoneNumber" asp-for="PhoneNumber">
+        </div>
+        <div class="input-group">
+            <label for="Address">Address</label>
+            <input type="text" id="Address" placeholder="Enter Address" asp-for="Address">
+        </div>
+        <div class="input-group">
+            <label>Your Role</label>
+            <select asp-for="RoleId" asp-items="ViewBag.Role">
+                <option>Select Your Role</option>
+
+            </select>
+        </div>
+        <div class="check">
+            <a href="" style="pointer-events: none;">Already have a account?</a>
+            <a asp-action="Login" asp-controller="Account">Login</a>
+        </div>
+        
+        
+        <div class="d-flex justify-content-center">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</section>
+<footer>
+    <div class="box text-center">
+
+        <p>
+            <img src="/imgs/footerlogo.19a797d2.svg" alt="">
+            Cheezious Copyright © 2024. All Rights Reserved.
+        </p>
+        <p>
+            <a href="">
+                TERMS & CONDITIONS
+            </a> |
+            <a href="">
+                Privacy policy
+            </a>
+        </p>
+    </div>
+</footer>

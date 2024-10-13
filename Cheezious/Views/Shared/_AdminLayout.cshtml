@@ -1,0 +1,121 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/css/Project-Proposal.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/media-quaries.css">
+
+</head>
+
+<body>
+
+    <head>
+        <div id="mySidenav" class="sidenav">
+            <span class="closebtn" onclick="closeNav()">&times;</span>
+
+            <ul>
+                <a asp-action="Home" asp-controller="Home" class="logo">
+                    <img src="/imgs/mainLogo.webp" alt="">
+                </a>
+                <li>
+                    <a asp-action="Roles" asp-controller="Admin">Roles</a>
+                </li>
+                <li>
+                    <a asp-action="Users" asp-controller="Admin">Users</a>
+                </li>
+                <li>
+                    <a asp-action="Categories" asp-controller="Admin">Category</a>
+                </li>
+                <li>
+                    <a asp-action="Orders" asp-controller="Admin">Orders</a>
+                </li>
+                <li>
+                    <a asp-action="Products" asp-controller="Admin">Products</a>
+                </li>
+                <li>
+                    <a asp-action="OrderStatuses" asp-controller="Admin">OrderStatus</a>
+                </li>
+                <li>
+                    <a asp-action="ProductStatuses" asp-controller="Admin">ProductStatus</a>
+                </li>
+                <li>
+                    <a asp-action="AssignOrders" asp-controller="Admin">AssignOrder</a>
+                </li>
+
+            </ul>
+        </div>
+    </head>
+
+    <main>
+        <div id="main">
+            <div class="box">
+                <div class="icon">
+                    <a asp-action="Dashboard" asp-controller="Admin"><i class='bx bx-home-alt'></i></a>
+                </div>
+                <div class="heading">
+                    <h4>Dashboard</h4>
+                </div>
+                <div class="user">
+                    <a asp-action="Login" asp-controller="Account" class="login d-none" ><i class='bx bxs-user me-1'></i> Login</a>
+                    <div class="dropdown d-none">
+                        <button onclick="myFunction()" class="dropbtn">Account</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="#">
+                                <img src="/imgs/user-img.jpg" alt="">
+                                <span>Usman</span>
+                            </a>
+                            <a href="#">Logout</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @RenderBody()
+            <div class="toggle-btn">
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()"><i
+                        class='bx bx-menu-alt-right me-1'></i>
+                </span>
+            </div>
+            </div>
+            <footer>
+                <div class="box text-center">
+                    <p>
+                        <img src="/imgs/footerlogo.19a797d2.svg" alt="">
+                        Cheezious Copyright © 2024. All Rights Reserved.
+                    </p>
+                    <p>
+                        <a href="">
+                            TERMS & CONDITIONS
+                        </a> |
+                        <a href="">
+                            Privacy policy
+                        </a>
+                    </p>
+                </div>
+            </footer>
+           
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/js/Project-Proposal.js"></script>
+
+
+
+
+</body>
+
+</html>

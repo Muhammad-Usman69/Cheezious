@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="box2 container my-4">
+    <div class="content">
+        <a asp-action="Orders" asp-controller="Admin" class="text-decoration-none">
+            <div class="content-box">
+                <i class='bx bxs-cart'></i>
+                <p>Orders</p>
+                <p class="text-end">@ViewBag.Orders</p>
+            </div>
+        </a>
+
+        <a asp-action="AssignOrders" asp-controller="Admin" class="text-decoration-none">
+            <div class="content-box">
+                <i class='bx bxs-user-check'></i>
+                <p>Assign Order</p>
+                <p class="text-end">@ViewBag.AssignOrders</p>
+            </div>
+        </a>
+
+    </div>
+    <div class="content">
+        <a asp-action="Products" asp-controller="Admin" class="text-decoration-none">
+            <div class="content-box">
+                <i class='bx bxs-bowl-hot'></i>
+                <p>Products</p>
+                <p class="text-end">@ViewBag.Products</p>
+            </div>
+        </a>
+
+        <a asp-action="Users" asp-controller="Admin" class="text-decoration-none">
+            <div class="content-box">
+                <i class='bx bxs-user'></i>
+                <p>Users</p>
+                <p class="text-end">@ViewBag.Users </p>
+            </div>
+        </a>
+
+    </div>
+</div>
+

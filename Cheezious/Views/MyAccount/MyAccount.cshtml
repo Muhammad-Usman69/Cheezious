@@ -1,0 +1,193 @@
+﻿@using Cheezious.Models.ViewModels
+@model UserViewModel
+
+
+@{
+
+    Layout = "~/Views/Shared/_FormsLayout.cshtml";
+
+}
+
+
+<link href="~/css/MyAccount.css" rel="stylesheet" />
+<link href="~/css/dashboard.css" rel="stylesheet" />
+
+<div class="tabs">
+    <h3>My Account</h3>
+    <ul class="tab-links">
+        <li class="active"><a href="#tab1">Edit Profile</a></li>
+        <li><a href="#tab2">Order History</a></li>
+
+    </ul>
+    <div class="tab-content">
+        <div id="tab1" class="tab active ">
+            <section id="login" class="d-flex justify-content-center">
+
+                <form asp-action="AddUpdateUserAccount" asp-controller="MyAccount" method="post" enctype="multipart/form-data">
+
+                    <input  id="name" placeholder="Enter Name" asp-for="Users.Id" type="hidden">
+                    <input  id="name" placeholder="Enter Name" asp-for="Users.RoleId" type="hidden">
+                    <input  id="name" placeholder="Enter Name" asp-for="Users.JoinedOn" type="hidden">
+                    <input  id="name" placeholder="Enter Name" asp-for="Users.AccessToken" type="hidden">
+
+
+                    <h4 class="text-center text-uppercase">Edit Profile</h4>
+                    <div class="input-group text-center">
+                       
+                        <label for="img" class="selectimg">
+                            <img class="imagePreview edit-img" src="~/imgs/user-images/@Model.Users.Image">
+                        </label>
+                        <input type="file" name="file" class="imageUpload d-none text-center" accept="image/*" id="img" asp-for="Users.Image">
+                    </div>
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter Name" asp-for="Users.Name">
+                    </div>
+                    <div class="input-group">
+                        <label for="Email">Email</label>
+                        <input type="text" id="Email" placeholder="Enter Email"  asp-for="Users.Email">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="Password">Password</label>
+                        <input type="text" id="Password" placeholder="Enter Password"  asp-for="Users.Password">
+                    </div>
+                    <div class="input-group">
+                        <label for="PhoneNumber">PhoneNumber</label>
+                        <input type="text" id="PhoneNumber" placeholder="Enter PhoneNumber"  asp-for="Users.PhoneNumber">
+                    </div>
+                    <div class="input-group">
+                        <label for="Address">Address</label>
+                        <input type="text" id="Address" placeholder="Enter Address"  asp-for="Users.Address">
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit">Update</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div id="tab2" class="tab">
+            <div class="roles">
+                <div class="roles-data">
+                  
+                    <div class="overflow-scroll">
+
+                    
+                        @if (Model.Orders.Any())
+                        {
+
+
+
+                            <table class="table mt-4 table-hover">
+                                <thead>
+                                    <tr>
+                                        
+                                     
+                                        <td>TItle</td>
+                                        <td>Price</td>
+                                        <td>CreatedOn</td>
+                                        <td>Action</td>
+
+                                        
+
+                                    </tr>
+                                   
+                                </thead>
+                                <tbody>
+
+                     
+                                    @foreach (Order order in Model.Orders)
+                                    {
+                                        
+                                        <tr>
+                                           
+                                            
+                                            <td>@order.Product.Title</td>
+                                            <td>@order.Product.Price</td>
+                                            <td>@order.CreatedOn</td>
+                                        <td>
+                                            <a asp-action="OrderDetails" asp-controller="Buyer" asp-route-id="@order.Id" class="btn btn-info"><i class="fa-solid fa-eye"></i></a>
+                                                <a asp-action="DeleteOrders" asp-controller="Buyer" asp-route-id="@order.Id" class="btn btn-danger"><i class='bx bxs-trash'></i></a>
+
+                                        </td>
+
+                                        </tr>
+                                      
+                                    }
+
+
+
+
+                                </tbody>
+                            </table>
+
+                        }
+
+                        @if (Model.AssignOrders.Any())
+                        {
+
+                            <table class="table mt-4 table-hover">
+                                <thead>
+                                    <tr>
+                                     
+                                        <td>BuyerName</td>
+                                        <td>ProductTitle</td>
+                                        <td>Price</td>
+                                        <td>DeliverdOn</td>
+                                        <td>Action</td>
+                                       
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                   
+                                    @foreach (var assignOrder in Model.AssignOrders)
+                                    {
+
+                                        <tr>
+                                           
+                                            <td>@assignOrder.Order.Buyer.Name</td>
+                                            <td>@assignOrder.Order.Product.Title</td>
+                                            <td>@assignOrder.Order.Product.Price</td>
+                                            <td>@assignOrder.DeliverdOn</td>
+                                        <td>
+                                            <a asp-action="AssignOrdersDetails" asp-controller="Rider" asp-route-id="@assignOrder.Id" class="btn btn-info"><i class="fa-solid fa-eye"></i></a>
+                                                <a asp-action="DeleteAssignOrders" asp-controller="Rider" asp-route-id="@assignOrder.Id" class="btn btn-danger"><i class='bx bxs-trash'></i></a>
+
+                                        </td>
+                                        </tr>
+                                       
+                                    }
+
+
+
+
+                                </tbody>
+                            </table>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<footer>
+    <div class="box text-center">
+        <p>
+            <img src="/imgs/footerlogo.19a797d2.svg" alt="">
+            Cheezious Copyright © 2024. All Rights Reserved.
+        </p>
+        <p>
+            <a href="">
+                TERMS & CONDITIONS
+            </a> |
+            <a href="">
+                Privacy policy
+            </a>
+        </p>
+    </div>
+</footer>

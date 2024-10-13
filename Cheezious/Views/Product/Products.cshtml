@@ -1,0 +1,117 @@
+﻿@using Cheezious.Models
+@model Dictionary<string, List<Product>>
+
+
+
+
+
+
+
+
+<style>
+    .product-sections {
+        margin: 6rem 3rem;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        margin-bottom: 60px;
+    }
+
+    .card {
+        border: none;
+        width: 250px;
+        text-align: center;
+    }
+
+        .card .img {
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .card .box {
+            background-color: #F8F8F8;
+            /* #F8F8F8 */
+            padding: 15px;
+            text-align: start;
+        }
+
+            .card .box h3 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+
+            .card .box .description {
+                font-size: 1rem;
+                margin: 5px 0;
+                font-weight: 400;
+                word-break: break-word;
+            }
+
+            .card .box .price {
+                font-weight: 600;
+            }
+
+            .card .box .orderbtn {
+                padding: 8px;
+                border: none;
+                font-size: 1rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                font-family: inherit;
+                border-radius: 10px;
+                background-color: white;
+                color: black;
+                letter-spacing: 0.50px;
+                text-align: center;
+                transition: all 0.2s ease-in-out;
+                width: 100% !important;
+                text-decoration:none;
+                display:block;
+            }
+
+
+                .card .box a:hover {
+                    background-color: #F15B25;
+                    color: white;
+                }
+
+</style>
+
+
+
+
+<div class="product-sections">
+    @foreach (var category in Model)
+    {
+        <h2 class="mb-3">@category.Key</h2>
+        <div class="card-container">
+            @if (category.Value != null && category.Value.Any())
+            {
+                foreach (var product in category.Value)
+                {
+                    <div class="card">
+                        <div class="img">
+                            <img src="~/imgs/product-images/@product.Image" style="width:200px;border-radius:10px" />
+                        </div>
+
+                        <div class="box">
+                            <h3>@product.Title</h3>
+                            <p class="description">@product.Description</p>
+                            <p class="price">Rs. @product.Price </p>
+                            <a asp-action="OrderProducts" asp-controller="Product" class="orderbtn" asp-route-id="@product.Id">+Add To Cart</a>
+                        </div>
+                    </div>
+                }
+            }
+        
+        </div>
+    }
+
+</div>
+
+
+
+

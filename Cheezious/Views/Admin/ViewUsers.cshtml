@@ -1,0 +1,32 @@
+﻿@using Cheezious.Models
+@model User
+
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="View">
+    <div class="container p-5">
+        <h2 class="fw-bold mb-3">Users</h2>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Name</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Name</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Email</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Email</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Password</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Password</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">PhoneNumber</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.PhoneNumber</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Address</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Address</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">Role</p>
+        <p class="fs-5" style="letter-spacing:0.60px">@Model.Role.Name</p>
+        <p class="fs-4" style="font-weight:600;letter-spacing:0.60px">User Image</p>
+        <p><img src="~/imgs/user-images/@Model.Image" style="width:200px;border-radius:10px" /> </p>
+
+    </div>
+</div>
+
+

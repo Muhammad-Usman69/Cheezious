@@ -1,0 +1,50 @@
+﻿@using Cheezious.Models
+@model List<Product>
+
+
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="roles">
+    <div class="roles-data">
+        <a asp-action="AddUpdateProducts" asp-controller="Admin" class="addbtn">Add</a>
+        <div class="overflow-scroll">
+            <table class="table mt-4 table-hover">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Title</td>
+                        <td>Price</td>
+                        <td>Description</td>
+                        <td>Action</td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Product products in Model)
+                    {
+                        <tr>
+                            <td>@products.Id</td>
+                            <td>@products.Title</td>
+                            <td>@products.Price</td>
+                            <td>@products.Description</td>
+
+
+                            <td>
+                                <a asp-action="ViewProducts" asp-controller="Admin" asp-route-id="@products.Id" class="btn btn-info"><i class="fa-solid fa-eye"></i></a>
+                                <a asp-action="AddUpdateProducts" asp-controller="Admin" asp-route-id="@products.Id" class="btn" style="background-color: #F25925;"><i class='bx bxs-pencil'></i></a>
+                                <a asp-action="DeleteProducts" asp-controller="Admin" asp-route-id="@products.Id" class="btn btn-danger"><i class='bx bxs-trash'></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

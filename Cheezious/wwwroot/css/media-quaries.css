@@ -1,0 +1,121 @@
+@media (max-width:768px) {
+    .navbar {
+        padding: 15px 0px;
+    }
+
+    .navbar-btns a {
+        padding: 0;
+        color: #F25925;
+    }
+
+    .navbar-btns .bt-1,
+    .bt-2 {
+        display: none;
+    }
+
+    .navbar-logo .logo1 {
+        display: none;
+    }
+
+    .navbar-logo .logo2 {
+        width: 100px;
+        display: block;
+    }
+
+    .navbar-toggler {
+        font-size: 20px;
+    }
+
+    .menu-wrapper .box2 p {
+        text-align: center;
+    }
+
+
+    #page4 {
+        margin-top: 13rem;
+    }
+
+
+    #page5 .box input {
+        width: auto;
+    }
+
+    .sidenav {
+        width: 0px;
+        position: fixed;
+        height: 100vh;
+    }
+
+    .toggle-btn {
+        display: block;
+
+    }
+
+    #main {
+        margin-left: 0px !important;
+    }
+
+    .closebtn {
+        display: block;
+    }
+
+    .sidenav .logo img {
+        margin-top: 20px;
+    }
+
+
+    #main .box .heading{
+        display: none;
+    }
+}
+
+@media (max-width:991px) {
+    #page3 {
+        padding: 0;
+        background-image: none;
+    }
+
+    .blogs {
+        flex-wrap: wrap;
+    }
+
+    #page3 .box2 {
+        display: none;
+    }
+
+    #page3 .box1 {
+        display: block;
+    }
+
+    #page5 {
+        background-image: none;
+        height: 50vh;
+        text-align: center;
+    }
+
+    #page5 .box h4 {
+        font-size: 2rem;
+    }
+
+    #page5 .box h5 {
+        font-size: 1rem;
+    }
+
+
+}
+
+
+@media (min-width:991px) {
+    #page3 .box1 {
+        display: none;
+    }
+}
+
+@media (min-width:767px) {
+
+    .navbar-btns .bt-3,
+    .bt-4 {
+        display: none;
+    }
+}
+

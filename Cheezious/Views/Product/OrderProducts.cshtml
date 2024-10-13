@@ -1,0 +1,56 @@
+﻿@using Cheezious.Models
+@model Product
+
+
+<style>
+    main{
+        flex-direction:column;
+        display:flex;
+        min-height:100vh;
+    }
+    .row{
+        flex:1;
+        margin:10rem auto;
+    }
+</style>
+
+<div class="row container align-items-center ">
+    <div class="col-6">
+        @if (string.IsNullOrEmpty(Model.Image))
+        {
+            <img src="/Imgs/placeholder-image.jpg" / class="img-fluid">
+        }
+        else
+        {
+            <img src="/Imgs/product-images/@Model.Image" alt="Alternate Text" class="img-fluid" />
+        }
+    </div>
+
+    <div class="col-6">
+        <h3><i class='bx bx-cart me-2'></i>@Model.Title</h3>
+        <hr />
+        <h3><i class='bx bx-dollar me-2'></i>@Model.Price</h3>
+        <hr />
+        <h3><i class='bx bx-book me-2'></i>@Model.Description</h3>
+        <hr />
+        <a href="/Product/Orders/@Model.Id" class="btn btn-warning">Order Now</a>
+        <hr />
+    </div>
+</div>
+<footer>
+    <div class="box text-center">
+
+        <p>
+            <img src="/imgs/footerlogo.19a797d2.svg" alt="">
+            Cheezious Copyright © 2024. All Rights Reserved.
+        </p>
+        <p>
+            <a href="">
+                TERMS & CONDITIONS
+            </a> |
+            <a href="">
+                Privacy policy
+            </a>
+        </p>
+    </div>
+</footer>

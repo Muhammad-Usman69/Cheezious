@@ -1,0 +1,56 @@
+﻿@using Cheezious.Models
+@model User
+
+
+@{
+
+    Layout = "~/Views/Shared/_FormsLayout.cshtml";
+
+}
+
+<link href="~/css/Login.css" rel="stylesheet" />
+<link href="~/css/media-quaries.css" rel="stylesheet" />
+
+    <section id="login" class="container">
+        <form method="post" asp-action="Login" asp-controller="Account">
+            <h4 class="text-center text-uppercase">Login</h4>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Enter Email" asp-for="Email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter Password" asp-for="Password">
+            </div>
+            @{
+                if (!string.IsNullOrEmpty(ViewBag.Error))
+            {
+                <p class="text-danger text-center">@ViewBag.Error</p>
+            }
+            }
+            <div class="check">
+                <a href="" style="pointer-events: none;">Don't have an account?</a>
+            <a asp-action="Register" asp-controller="Account">SignUp</a>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </section>
+    <footer>
+        <div class="box text-center">
+
+            <p>
+                <img src="/imgs/footerlogo.19a797d2.svg" alt="">
+                Cheezious Copyright © 2024. All Rights Reserved.
+            </p>
+            <p>
+                <a href="">
+                    TERMS & CONDITIONS
+                </a> |
+                <a href="">
+                    Privacy policy
+                </a>
+            </p>
+        </div>
+    </footer>

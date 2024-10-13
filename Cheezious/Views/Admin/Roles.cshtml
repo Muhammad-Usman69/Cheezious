@@ -1,0 +1,45 @@
+﻿@using Cheezious.Models
+@model List<Roles>
+
+
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="roles">
+    <div class="roles-data">
+        <a asp-action="AddUpdateRoles" asp-controller="Admin" class="addbtn">Add</a>
+        <div class="overflow-scroll">
+            <table class="table mt-4 table-hover">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Name</td>
+                        <td>Action</td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Roles roles in Model)
+                    {
+                        <tr>
+                            <td>@roles.Id</td>
+                            <td>@roles.Name</td>
+
+                            <td>
+                                <a asp-action="ViewRoles" asp-controller="Admin" asp-route-id="@roles.Id" class="btn btn-info"><i class="fa-solid fa-eye"></i></a>
+                                <a asp-action="AddUpdateRoles" asp-controller="Admin" asp-route-id="@roles.Id" class="btn" style="background-color: #F25925;"><i class='bx bxs-pencil'></i></a>
+                                <a asp-action="DeleteRoles" asp-controller="Admin" asp-route-id="@roles.Id" class="btn btn-danger"><i class='bx bxs-trash'></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
