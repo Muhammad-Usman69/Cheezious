@@ -1,4 +1,5 @@
-﻿using Cheezious.Models;
+﻿using Azure;
+using Cheezious.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -22,11 +23,8 @@ namespace Cheezious.Controllers
         {
             return View();
         }
-        [HttpGet]
-        public IActionResult BecomeARider()
-        {
-            return View();
-        }
+       
+    
         [HttpPost]
         public IActionResult Login(User user)
         {
@@ -99,6 +97,7 @@ namespace Cheezious.Controllers
                 if (!string.IsNullOrEmpty(ViewBag.Error))
                 {
                     return View(user);
+                    
                 }
 
             }
@@ -114,12 +113,14 @@ namespace Cheezious.Controllers
             return RedirectToAction("Home", "Home");
 
         }
+
         [HttpGet]
         public IActionResult Logout()
         {
             Response.Cookies.Delete("user-cookies");
             return RedirectToAction("Home", "Home");
         }
+
 
     }
 }

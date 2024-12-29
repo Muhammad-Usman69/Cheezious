@@ -120,7 +120,7 @@ namespace Cheezious.Controllers
                 else
                 {
                     string name = DateTime.UtcNow.Ticks.ToString() + extention;
-                    string path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot/imgs/product-images/{name}");
+                    string path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot/imgs/user-images/{name}");
                     using (FileStream stream = new FileStream(path, FileMode.Create))
                     {
                         file.CopyTo(stream);
@@ -139,7 +139,7 @@ namespace Cheezious.Controllers
             users.AccessToken = DateTime.UtcNow.Ticks.ToString();
             _context.Update(users);
             _context.SaveChanges();
-            return Redirect($"/MyAccount/MyAccount/{users.Id}");
+            return RedirectToAction("Home" , "Home");
 
 
         }
