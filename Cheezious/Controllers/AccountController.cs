@@ -34,6 +34,7 @@ namespace Cheezious.Controllers
                 ViewBag.Error = "Email or Password is incorrect";
             return View();
             }
+
             CookieOptions cookieOptions = new CookieOptions();
             cookieOptions.Expires = DateTime.Now.AddDays(7);
             Response.Cookies.Append("user-cookies" , dbuser.AccessToken, cookieOptions);

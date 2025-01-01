@@ -14,5 +14,9 @@
         public virtual Roles Role { get; set; }
         public int RoleId { get; set; }
 
+        public static implicit operator User(bool v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

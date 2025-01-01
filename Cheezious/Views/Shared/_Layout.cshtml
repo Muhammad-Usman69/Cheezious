@@ -73,10 +73,8 @@
                             <a href=""><img src="/imgs/mainLogo.webp" class="img-fluid logo2" alt=""></a>
                         </div>
                         <div class="navbar-btns">
-                            <a class="navbar-brand me-2 bt-2" asp-action="MyAccount" asp-controller="MyAccount" asp-route-id="@user.Id"><i class='bx bxs-cart me-1'></i> Orders</a>
 
                             <a class="navbar-brand bt-2" asp-action="MyAccount" asp-controller="MyAccount" asp-route-id="@user.Id"><i class='bx bxs-user me-1'></i> Account</a>
-                            <a class="navbar-brand bt-3 me-1" asp-action="MyAccount" asp-controller="MyAccount" asp-route-id="@user.Id"><i class='bx bx-cart'></i></a>
                             <a class="navbar-brand bt-4" asp-action="MyAccount" asp-controller="MyAccount" asp-route-id="@user.Id"><i class='bx bx-user'></i></a>
                         </div>
                     }
@@ -86,11 +84,9 @@
                             <a href=""><img src="/imgs/mainLogo.webp" class="img-fluid logo2" alt=""></a>
                         </div>
                         <div class="navbar-btns">
-                            <a class="navbar-brand me-2 bt-2" asp-action="MyAccount" asp-controller="MyAccount" asp-route-id="@user.Id"><i class='bx bxs-cart me-1'></i> Orders</a>
 
                             <a class="navbar-brand bt-2" asp-action="MyAccount" asp-controller="MyAccount" asp-route-id="@user.Id"><i class='bx bxs-user me-1'></i> Account</a>
 
-                            <a class="navbar-brand bt-3 me-1" asp-action="MyAccount" asp-controller="MyAccount" asp-route-id="@user.Id"><i class='bx bx-cart'></i></a>
                             <a class="navbar-brand bt-4" asp-action="MyAccount" asp-controller="MyAccount" asp-route-id="@user.Id"><i class='bx bx-user'></i></a>
                         </div>
                     }
@@ -102,7 +98,7 @@
                             <ul class="navbar-nav  flex-grow-1">
                                 <li class="nav-item">
                                     <a class="d-flex align-items-center text-decoration-none user" aria-current="page"
-                                       href="#">
+                                       >
                                         <p><img src="/imgs/user-images/@user.Image" class="me-2" style="border-radius:50%;" alt=""></p>
                                         <p class="ms-3" style="color: black;font-weight: 600;letter-spacing: 1px;margin-top:3px;">
                                             @user.Name
